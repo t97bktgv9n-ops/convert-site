@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>読点・句点変換ツール</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #7fbfff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+
+<h2>読点・句点変換ツール</h2>
+
+<textarea id="input" placeholder="ここに文章を入力"></textarea>
+<button onclick="convert()">変換する</button>
+<textarea id="output" placeholder="変換結果"></textarea>
+
+<script>
+function convert() {
+  const text = document.getElementById("input").value;
+  const converted = text
+    .replace(/、/g, ",")
+    .replace(/。/g, ".");
+  document.getElementById("output").value = converted;
+}
+</script>
+
+</body>
+</html>
